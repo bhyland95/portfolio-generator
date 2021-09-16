@@ -1,4 +1,5 @@
 const fs = require('fs');
+<<<<<<< HEAD
 const inquirer = require('inquirer');
 const generatePage = require('./src/page-template');
 
@@ -137,3 +138,19 @@ promptUser()
       console.log('Page created! Check out index.html in this directory to see it!');
     });
   });
+=======
+const generatePage = require('./src/page-template.js');
+
+const profileDataArgs = process.argv.slice(2);
+
+const [name, github] = profileDataArgs;
+
+
+
+fs.writeFile('./index.html', generatePage(name, github), err => {
+  if (err) throw new Error(err);
+
+  console.log('Portfolio complete! Check out index.html to see the output!');
+});
+
+>>>>>>> 7917f6c10c4360e3cbe0a6e8c87b1603f4d818f6
